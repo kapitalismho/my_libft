@@ -6,29 +6,75 @@
 #    By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/11 00:19:39 by salee             #+#    #+#              #
-#    Updated: 2021/05/13 23:41:00 by salee            ###   ########.fr        #
+#    Updated: 2021/06/01 06:50:43 by salee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SOURCE = ./ft_memset.c ./ft_bzero.c ./ft_memcpy.c ./ft_memccpy.c ./ft_memmove.c ./ft_memchr.c ./ft_memcmp.c ./ft_strlen.c ./ft_strlcpy.c ./ft_strlcat.c ./ft_strchr.c ./ft_strrchr.c
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -I.
 
-OBJECT = ./ft_memset.o ./ft_bzero.o ./ft_memcpy.o ./ft_memccpy.o ./ft_memmove.o ./ft_memchr.o ./ft_memcmp.o ./ft_strlen.o ./ft_strlcpy.o ./ft_strlcat.o ./ft_strchr.o ./ft_strrchr.o
+SOURCE = ./ft_memset.c	\
+./ft_bzero.c	\
+./ft_memcpy.c	\
+./ft_memccpy.c	\
+./ft_memmove.c	\
+./ft_memchr.c	\
+./ft_memcmp.c	\
+./ft_strlen.c	\
+./ft_strlcpy.c	\
+./ft_strlcat.c	\
+./ft_strchr.c	\
+./ft_strrchr.c	\
+./ft_strncmp.c	\
+./ft_strnstr.c	\
+./ft_atoi.c	\
+./ft_isalpha.c	\
+./ft_isdigit.c	\
+./ft_isalnum.c	\
+./ft_isascii.c	\
+./ft_isprint.c	\
+./ft_tolower.c	\
+./ft_toupper.c	\
+./ft_calloc.c	\
+./ft_strdup.c	\
+./ft_substr.c	\
+./ft_strjoin.c	\
+./ft_strtrim.c	\
+./ft_split.c	\
+./ft_itoa.c		\
+./ft_strmapi.c	\
+./ft_putchar_fd.c	\
+./ft_putstr_fd.c	\
+./ft_putendl_fd.c	\
+./ft_putnbr_fd.c	\
 
-all: ${NAME}
+BONUS_SOURCE = ./ft_lstnew.c	\
+./ft_lstadd_front.c	\
+./ft_lstsize.c	\
 
-${NAME}: ${OBJECT}
-	ar rc libft.a ${OBJECT}
+OBJECT = $(SOURCE:%.c=%.o)
 
-%.o: %.c
-	gcc -Wall -Wextra -Werror -c $< -o $@
+BONUS_OBJECT = $(BONUS_SOURCE:%.c=%.o)
 
-clean:
-	rm -f ${OBJECT}
+ifdef WITH_BONUS
+	OBJ_FILES = $(OBJECT) $(BONUS_OBJECT)
+else
+	OBJ_FILES = $(OBJECT)
+endif
 
-fclean: clean
-	rm -f libft.a
+all : $(NAME)
 
-re: fclean all
+$(NAME) : $(OBJ_FILES)
+	ar rcs $(NAME) $(OBJECT) $(BONUS_OBJECT)
 
+bonus :
+	make WITH_BONUS=1 all
+clean :
+	rm -f $(OBJECT) $(BONUS_OBJECT)
+
+fclean : clean
+	rm -f $(NAME)
+
+re : fclean all

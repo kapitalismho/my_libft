@@ -6,7 +6,7 @@
 /*   By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 23:17:28 by salee             #+#    #+#             */
-/*   Updated: 2021/05/14 01:23:28 by salee            ###   ########.fr       */
+/*   Updated: 2021/05/29 05:55:56 by salee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ char	*ft_strchr(const char *s, int c)
 	char c2;
 
 	c2 = (char)c;
-	while (*s != '\0' && *s != c)
+	while (*s != '\0' && *s != c2)
 	{
 		s++;
 	}
-	if (*s == c)
+	if (*s == c2)
 	{
 		return (char *)(s);
 	}

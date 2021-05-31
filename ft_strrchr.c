@@ -6,7 +6,7 @@
 /*   By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 23:46:56 by salee             #+#    #+#             */
-/*   Updated: 2021/05/14 01:24:23 by salee            ###   ########.fr       */
+/*   Updated: 2021/05/29 06:50:29 by salee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char *ret_adr;
-	char *found_adr;
-	char *s2;
-	char c2;
+	char	*ret_adr;
+	char	*found_adr;
+	char	*s2;
+	char	c2;
 
 	s2 = (char *)s;
 	c2 = (char)c;
