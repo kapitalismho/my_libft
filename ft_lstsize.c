@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 06:48:19 by salee             #+#    #+#             */
-/*   Updated: 2021/06/01 06:48:19 by salee            ###   ########.fr       */
+/*   Created: 2021/06/01 12:27:08 by salee             #+#    #+#             */
+/*   Updated: 2021/06/02 07:46:40 by salee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	size_t i;
+	size_t	i;
+	t_list	*lst_tmp;
 
-	i = 0;
-	while (1)
+	if (lst == NULL)
+		return (0);
+	i = 1;
+	lst_tmp = lst;
+	while (lst_tmp->next != NULL)
 	{
-		if (lst == NULL)
-			break ;
-		else
-		{
-			i++;
-			lst = lst->next;
-		}
+		lst_tmp = lst_tmp->next;
+		i++;
 	}
 	return (i);
 }

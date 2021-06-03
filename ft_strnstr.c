@@ -5,32 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 06:12:48 by salee             #+#    #+#             */
-/*   Updated: 2021/05/29 06:12:48 by salee            ###   ########.fr       */
+/*   Created: 2021/06/01 12:43:54 by salee             #+#    #+#             */
+/*   Updated: 2021/06/01 18:39:38 by salee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	char	*big2;
-	char	*big2_end;
-	size_t	little_len;
+	size_t	i;
+	size_t	len;
 
-	if (big == NULL)
-		ft_strlen(big);
-	big2 = (char *)big;
-	big2_end = big2 + len;
-	little_len = ft_strlen(little);
-	if (little_len == 0)
-		return (big2);
-	big2_end = big2_end - (little_len - 1);
-	while (big2 < big2_end)
+	i = 1;
+	if (!*s2)
+		return ((char *)s1);
+	len = ft_strlen(s2);
+	if (n > ft_strlen(s1))
+		n = ft_strlen(s1);
+	while (len <= n--)
 	{
-		if (ft_strncmp(big2, (char *)little, little_len) == 0)
-			return (big2);
-		big2++;
+		if (*s1 == *s2)
+		{
+			while (1)
+			{
+				if (i == len)
+					return ((char *)s1);
+				if (s1[i] != s2[i])
+					break ;
+				i++;
+			}
+		}
+		s1++;
 	}
 	return (NULL);
 }

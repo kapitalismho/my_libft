@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 06:32:46 by salee             #+#    #+#             */
-/*   Updated: 2021/05/29 06:32:46 by salee            ###   ########.fr       */
+/*   Created: 2021/06/01 12:43:31 by salee             #+#    #+#             */
+/*   Updated: 2021/06/01 13:12:31 by salee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(char *s1, char *s2, size_t n)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned char	*s11;
 	unsigned char	*s22;

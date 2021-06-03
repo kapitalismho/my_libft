@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/31 11:16:43 by salee             #+#    #+#             */
-/*   Updated: 2021/05/31 11:16:43 by salee            ###   ########.fr       */
+/*   Created: 2021/06/01 12:24:16 by salee             #+#    #+#             */
+/*   Updated: 2021/06/01 12:24:58 by salee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	size_calculator(int is_negative, long n)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (n < 0)
@@ -32,7 +32,7 @@ static int	size_calculator(int is_negative, long n)
 	return (i);
 }
 
-static char	*number_setter(long n, int i, char* ret_string, int is_negative)
+static char	*number_setter(long n, int i, char *ret_string, int is_negative)
 {
 	int		digit;
 
@@ -52,7 +52,7 @@ static char	*number_setter(long n, int i, char* ret_string, int is_negative)
 	return (ret_string);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int		is_negative;
 	int		i;

@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/12 23:40:36 by salee             #+#    #+#             */
-/*   Updated: 2021/05/12 23:59:13 by salee            ###   ########.fr       */
+/*   Created: 2021/06/01 12:35:01 by salee             #+#    #+#             */
+/*   Updated: 2021/06/01 13:05:52 by salee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	src_length;

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/31 06:18:05 by salee             #+#    #+#             */
-/*   Updated: 2021/05/31 06:18:05 by salee            ###   ########.fr       */
+/*   Created: 2021/06/01 12:34:39 by salee             #+#    #+#             */
+/*   Updated: 2021/06/02 13:08:17 by salee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,5 @@ char		*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	joined_string = my_strcat(joined_string, (char *)s1);
 	joined_string = my_strcat(joined_string, (char *)s2);
-	joined_string[size] = '\0';
 	return (joined_string);
 }

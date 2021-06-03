@@ -5,21 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/31 00:44:14 by salee             #+#    #+#             */
-/*   Updated: 2021/05/31 00:44:14 by salee            ###   ########.fr       */
+/*   Created: 2021/06/01 12:46:35 by salee             #+#    #+#             */
+/*   Updated: 2021/06/01 13:17:36 by salee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *idx_calculated_string;
-	char *substring;
-	size_t i;
+	char	*idx_calculated_string;
+	char	*substring;
+	size_t	i;
+	size_t	s_len;
 
-	if (ft_strlen(s) <= start)
+	s_len = ft_strlen(s);
+	if (s_len <= start)
 		return (ft_strdup(""));
+	if (s_len < len)
+		len = s_len;
 	i = 0;
 	idx_calculated_string = (char *)s + start;
 	substring = malloc(len + 1);

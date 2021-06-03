@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 07:23:25 by salee             #+#    #+#             */
-/*   Updated: 2021/05/29 07:23:25 by salee            ###   ########.fr       */
+/*   Created: 2021/06/01 12:13:54 by salee             #+#    #+#             */
+/*   Updated: 2021/06/01 13:08:00 by salee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static long	print_numbers(size_t i, char *str)
 	return (result * sign);
 }
 
-int		ft_atoi(char *str)
+int			ft_atoi(const char *str)
 {
 	size_t	i;
 
@@ -54,7 +54,7 @@ int		ft_atoi(char *str)
 		}
 		else
 		{
-			return (print_numbers(i, str));
+			return (print_numbers(i, (char *)str));
 		}
 	}
 	return (0);

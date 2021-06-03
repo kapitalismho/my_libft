@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 05:54:54 by salee             #+#    #+#             */
-/*   Updated: 2021/06/01 05:54:54 by salee            ###   ########.fr       */
+/*   Created: 2021/06/01 12:26:04 by salee             #+#    #+#             */
+/*   Updated: 2021/06/01 12:26:53 by salee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *LD_pointer;
+	t_list *ld_pointer;
 
-	LD_pointer = (t_list *)malloc(sizeof(t_list) * 1);
-	if (LD_pointer == NULL)
+	ld_pointer = (t_list *)malloc(sizeof(t_list) * 1);
+	if (ld_pointer == NULL)
 		return (NULL);
-	LD_pointer->content = content;
-	LD_pointer->next = NULL;
-	return (LD_pointer);
+	ld_pointer->content = content;
+	ld_pointer->next = NULL;
+	return (ld_pointer);
 }

@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 06:33:44 by salee             #+#    #+#             */
-/*   Updated: 2021/06/01 06:33:44 by salee            ###   ########.fr       */
+/*   Created: 2021/06/01 12:25:35 by salee             #+#    #+#             */
+/*   Updated: 2021/06/02 07:35:51 by salee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	new->next = *lst;
 	*lst = new;

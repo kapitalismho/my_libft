@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 02:41:29 by salee             #+#    #+#             */
-/*   Updated: 2021/06/01 02:41:29 by salee            ###   ########.fr       */
+/*   Created: 2021/06/01 12:31:53 by salee             #+#    #+#             */
+/*   Updated: 2021/06/01 12:32:15 by salee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	number_setter(long nb, int fd)
 	number_printer(numbers, i, is_negative, fd);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void		ft_putnbr_fd(int n, int fd)
 {
 	long	nbr;
 

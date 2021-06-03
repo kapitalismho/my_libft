@@ -5,15 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: salee <salee@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/05/11 00:19:39 by salee             #+#    #+#              #
-#    Updated: 2021/06/01 06:50:43 by salee            ###   ########.fr        #
+#    Created: 2021/06/01 12:16:52 by salee             #+#    #+#              #
+#    Updated: 2021/06/03 10:14:24 by salee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I.
 
 SOURCE = ./ft_memset.c	\
 ./ft_bzero.c	\
@@ -53,24 +50,34 @@ SOURCE = ./ft_memset.c	\
 BONUS_SOURCE = ./ft_lstnew.c	\
 ./ft_lstadd_front.c	\
 ./ft_lstsize.c	\
+./ft_lstlast.c	\
+./ft_lstadd_back.c	\
+./ft_lstdelone.c	\
+./ft_lstclear.c	\
+./ft_lstiter.c	\
+./ft_lstmap.c	\
 
-OBJECT = $(SOURCE:%.c=%.o)
+OBJECT_MANDATORY = $(SOURCE:%.c=%.o)
 
 BONUS_OBJECT = $(BONUS_SOURCE:%.c=%.o)
 
 ifdef WITH_BONUS
-	OBJ_FILES = $(OBJECT) $(BONUS_OBJECT)
+	OBJECT = $(OBJECT_MANDATORY) $(BONUS_OBJECT)
 else
-	OBJ_FILES = $(OBJECT)
+	OBJECT = $(OBJECT_MANDATORY)
 endif
 
 all : $(NAME)
 
-$(NAME) : $(OBJ_FILES)
-	ar rcs $(NAME) $(OBJECT) $(BONUS_OBJECT)
+$(NAME) : $(OBJECT)
+	ar rcs $(NAME) $(OBJECT)
 
 bonus :
 	make WITH_BONUS=1 all
+
+%.o : %.c
+	gcc -Wall -Wextra -Werror -c $< -o $@
+
 clean :
 	rm -f $(OBJECT) $(BONUS_OBJECT)
 
@@ -78,3 +85,5 @@ fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
+
+.PHONY : all bonus clean fclean re
